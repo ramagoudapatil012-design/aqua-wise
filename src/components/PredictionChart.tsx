@@ -31,6 +31,18 @@ export function PredictionChart() {
           </span>
         </div>
       </div>
+
+      {/* Explanation card */}
+      <div className="mb-4 rounded-xl border border-border bg-background/50 p-4 text-xs leading-relaxed text-muted-foreground">
+        <p className="mb-2 font-semibold text-foreground">📊 How does prediction work?</p>
+        <ul className="list-disc space-y-1 pl-4">
+          <li><strong className="text-foreground">Actual (solid green line):</strong> Real groundwater levels recorded by DWLR sensors from Jan–Jun.</li>
+          <li><strong className="text-foreground">Predicted (dashed blue line):</strong> AI-forecasted levels for Jul–Dec based on historical trends, rainfall data, and extraction rates.</li>
+          <li>Higher values = deeper water table = more stress on aquifers.</li>
+          <li>The model updates monthly as new sensor data arrives.</li>
+        </ul>
+      </div>
+
       <ResponsiveContainer width="100%" height={220}>
         <AreaChart data={data} margin={{ top: 5, right: 5, left: -20, bottom: 0 }}>
           <defs>
